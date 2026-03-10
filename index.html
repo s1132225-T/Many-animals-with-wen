@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wen Tsui | Creative Designer & Developer</title>
+    <!-- Tailwind CSS for rapid, modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for UI and Playfair Display for headers -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-main: #1a1a1a;
+            --accent: #5e5e5e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Text Animation */
+        .hero-reveal {
+            animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        @keyframes reveal {
+            0% { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Custom Masonry-like Grid */
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            transition: transform 0.4s ease;
+        }
+
+        .masonry-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card img {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .project-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Navigation glassmorphism */
+        nav {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card {
+            border-bottom: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            padding-left: 1.5rem;
+            border-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/70">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tighter uppercase cursor-pointer" onclick="window.scrollTo(0,0)">Wen Tsui</div>
+            <div class="hidden md:flex space-x-12 text-sm font-medium tracking-wide uppercase">
+                <a href="#work" class="hover:opacity-50 transition-opacity">Work</a>
+                <a href="#services" class="hover:opacity-50 transition-opacity">Services</a>
+                <a href="#about" class="hover:opacity-50 transition-opacity">About</a>
+                <a href="#contact" class="hover:opacity-50 transition-opacity">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center px-6 pt-20">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="overflow-hidden">
+                    <h1 class="hero-reveal text-6xl md:text-9xl leading-[0.9] serif mb-8">
+                        Crafting <span class="italic">digital</span><br>experiences.
+                    </h1>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12">
+                    <p class="max-w-md text-lg text-neutral-500 leading-relaxed">
+                        Hi, I'm Wen. An independent designer & developer specializing in high-end visual identities and interactive web solutions for global brands.
+                    </p>
+                    <div class="flex items-center gap-4 group cursor-pointer" onclick="document.getElementById('work').scrollIntoView()">
+                        <span class="text-sm font-semibold uppercase tracking-widest underline underline-offset-8">Explore Work</span>
+                        <div class="w-12 h-12 rounded-full border border-black flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
+                            <i data-lucide="arrow-down-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Grid -->
+        <section id="work" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-16">
+                    <h2 class="text-4xl serif">Selected Works</h2>
+                    <span class="text-neutral-400 text-sm">2023 — 2025</span>
+                </div>
+                
+                <div class="columns-1 md:columns-2 gap-8">
+                    <!-- Animal Project 1 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[3/4] relative">
+                            <img src="https://images.unsplash.com/photo-1474511320723-9a56873571b7?auto=format&fit=crop&q=80&w=800" alt="Fox Portrait" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Wild Portraits</h3>
+                            <p class="text-neutral-500 text-sm">Wildlife Photography</p>
+                        </div>
+                    </div>
+
+                    <!-- Animal Project 2 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[4/5] relative">
+                            <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&q=80&w=800" alt="Lion" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Savanna Kings</h3>
+                            <p class="text-neutral-500 text-sm">Wildlife Documentary</p>
+                        </div>
+                    </div>
+
+                    <!-- Animal Project 3 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[1/1] relative">
+                            <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&q=80&w=800" alt="Parrot" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Colorful Wings</h3>
+                            <p class="text-neutral-500 text-sm">Avian Photography</p>
+                        </div>
+                    </div>
+
+                    <!-- Animal Project 4 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[3/2] relative">
+                            <img src="https://images.unsplash.com/photo-1456926631375-92c8ce872def?auto=format&fit=crop&q=80&w=800" alt="Elephant" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Gentle Giants</h3>
+                            <p class="text-neutral-500 text-sm">Nature Conservation</p>
+                        </div>
+                    </div>
+
+                    <!-- Animal Project 5 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[4/5] relative">
+                            <img src="https://images.unsplash.com/photo-1534313314371-4c879ec08566?auto=format&fit=crop&q=80&w=800" alt="Wolf" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Pack Life</h3>
+                            <p class="text-neutral-500 text-sm">Animal Behavior Study</p>
+                        </div>
+                    </div>
+
+                    <!-- Animal Project 6 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[3/4] relative">
+                            <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?auto=format&fit=crop&q=80&w=800" alt="Owl" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Night Watchers</h3>
+                            <p class="text-neutral-500 text-sm">Nocturnal Wildlife</p>
+                        </div>
+                    </div>
+
+                    <!-- Animal Project 7 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[1/1] relative">
+                            <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&q=80&w=800" alt="Sea Turtle" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Ocean Wanderers</h3>
+                            <p class="text-neutral-500 text-sm">Marine Life</p>
+                        </div>
+                    </div>
+
+                    <!-- Animal Project 8 -->
+                    <div class="masonry-item project-card group cursor-pointer">
+                        <div class="overflow-hidden bg-neutral-100 aspect-[4/3] relative">
+                            <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=800" alt="Giraffe" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-medium">Safari Stories</h3>
+                            <p class="text-neutral-500 text-sm">African Expedition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-32 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div class="md:col-span-4">
+                        <h2 class="text-4xl serif sticky top-32">Services &<br><span class="italic text-neutral-400">Expertise</span></h2>
+                    </div>
+                    <div class="md:col-span-8 space-y-0">
+                        <!-- Service 1 -->
+                        <div class="service-card py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                            <div class="max-w-md">
+                                <h3 class="text-2xl font-medium mb-4">Brand Strategy</h3>
+                                <p class="text-neutral-500 leading-relaxed">Defining the core essence of your business. From competitive analysis and market positioning to visual identity systems that resonate with your audience.</p>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest font-semibold py-2 px-4 bg-neutral-100 rounded-full">Strategy</span>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="service-card py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                            <div class="max-w-md">
+                                <h3 class="text-2xl font-medium mb-4">UI/UX Design</h3>
+                                <p class="text-neutral-500 leading-relaxed">Designing intuitive interfaces that solve complex problems. I focus on user-centric workflows, wireframing, and high-fidelity prototypes that delight users.</p>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest font-semibold py-2 px-4 bg-neutral-100 rounded-full">Experience</span>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="service-card py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                            <div class="max-w-md">
+                                <h3 class="text-2xl font-medium mb-4">Digital Development</h3>
+                                <p class="text-neutral-500 leading-relaxed">Turning designs into high-performance digital products. Specialized in responsive web development, React applications, and smooth interactions.</p>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest font-semibold py-2 px-4 bg-neutral-100 rounded-full">Build</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 px-6 bg-[#f7f7f7]">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="text-4xl md:text-5xl serif leading-tight mb-8">Obsessed with the <span class="italic">details</span> that matter.</h2>
+                    <p class="text-neutral-600 mb-6 leading-relaxed">
+                        I believe that great design is invisible. It should feel intuitive, effortless, and serve a purpose. My approach combines technical precision with a deep understanding of user psychology.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-black"></div>
+                            <span class="text-sm uppercase tracking-widest font-medium">UI/UX Design</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-black"></div>
+                            <span class="text-sm uppercase tracking-widest font-medium">Full-stack Development</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-black"></div>
+                            <span class="text-sm uppercase tracking-widest font-medium">Interaction Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-6 md:col-start-8">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Profile" class="w-full grayscale shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-40 px-6 bg-black text-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="text-neutral-500 uppercase tracking-[0.3em] mb-8 text-sm">Available for projects</p>
+                <a href="mailto:hello@wentsui.com" class="text-4xl md:text-8xl serif hover:italic transition-all duration-300">
+                    hello@wentsui.com
+                </a>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-32 text-left pt-16 border-t border-white/10">
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-neutral-500 mb-4">Location</h4>
+                        <p>Brooklyn, New York</p>
+                        <p class="text-neutral-500">Working Remotely</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-neutral-500 mb-4">Social</h4>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="hover:text-neutral-400 transition-colors">LinkedIn</a>
+                            <a href="#" class="hover:text-neutral-400 transition-colors">Dribbble</a>
+                            <a href="#" class="hover:text-neutral-400 transition-colors">Instagram</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-neutral-500 mb-4">Current Status</h4>
+                        <p>Open to collaborations for Q3 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-neutral-100 text-xs uppercase tracking-widest text-neutral-400">
+        <div class="max-w-7xl mx-auto flex justify-between">
+            <p>&copy; 2025 Wen Tsui</p>
+            <p>Built with Passion</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'translate-y-10', 'opacity-0');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
